@@ -24,7 +24,7 @@ module Blankable
       else
         value.nil?
       end
-      break(result) unless result
+      break unless result
     end
     result
   end
