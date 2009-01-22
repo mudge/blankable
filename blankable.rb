@@ -6,16 +6,15 @@
 #  {:a => '', :b => {:c => nil}}.values_blank?  #=> true
 #  ['', nil, '', ''].values_blank?              #=> true
 # 
-# See http://mucur.name/posts/ruby-blankable-mixin for more information.
+# http://github.com/mudge/blankable/
 #
 # Copyright (c) Paul Mucur (http://mucur.name), 2008.
 # Licensed under the BSD License (LICENSE.txt).
 
 module Blankable
   def values_blank?
-    result = true
-    for value in blankable_values
-      result &&= if value.respond_to?(:values_blank?)
+    blankable_values.all? do |value|
+      if value.respond_to?(:values_blank?)
         value.values_blank?
       elsif value.respond_to?(:blank?)
         value.blank?
@@ -24,9 +23,7 @@ module Blankable
       else
         value.nil?
       end
-      break unless result
     end
-    result
   end
 end
 

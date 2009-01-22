@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 # Ruby Blankable Mixin Test Suite
-# See http://mucur.name/posts/ruby-blankable-mixin for more information.
+# http://github.com/mudge/blankable/
 #
-# Copyright (c) Paul Mucur (http://mucur.name), 2008.
+# Copyright (c) Paul Mucur (http://mucur.name), 2008-09.
 # Licensed under the BSD License (LICENSE.txt).
 
 require 'test/unit'
